@@ -8,11 +8,11 @@ First, you have to run flutter pub get at the root of the project:
 
 ```flutter pub get```
 
-#### To login, use these credentials:
+  ### To login, use these credentials:
 
-**email: tester@email.com**
+  **email: tester@email.com**
 
-**password: 123456**
+  **password: 123456**
 
 ## Features
 
