@@ -23,7 +23,7 @@ class RulesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'House Rules',
+      title: 'Rules App',
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
