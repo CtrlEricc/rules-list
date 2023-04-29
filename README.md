@@ -22,7 +22,7 @@ This app contains:
 - Show details of a rule (GET)
 - Create a new rule (POST) 
 - Update an existing rule (PUT)
-- Delte an existing rule (DELETE)
+- Delete an existing rule (DELETE)
 
 ## Screenshots
 ![LOGIN](https://user-images.githubusercontent.com/19862234/235278161-01772e42-e79f-4b1a-8646-722454371cd4.png)
