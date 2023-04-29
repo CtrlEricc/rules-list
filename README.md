@@ -18,7 +18,7 @@ First, you have to run flutter pub get at the root of the project:
 
 This app contains:
 - Firebase login with email and password
-- Show a list of all rules (GET)
+- Show list of all rules (GET)
 - Show details of a rule (GET)
 - Create a new rule (POST) 
 - Update an existing rule (PUT)
