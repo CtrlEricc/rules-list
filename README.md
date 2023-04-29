@@ -4,9 +4,10 @@ A rules list to your house!
 
 ## Getting Started
 
-First, you have to run flutter pub get at the root of the project
-
+First, you have to run flutter pub get at the root of the project:
 ```flutter pub get```
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
