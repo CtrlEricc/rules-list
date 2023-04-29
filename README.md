@@ -1,10 +1,12 @@
-# the_list
+# Rules list
 
-A new Flutter project.
+A rules list to your house!
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+First, you have to run flutter pub get at the root of the project
+
+```flutter pub get```
 
 A few resources to get you started if this is your first Flutter project:
 
