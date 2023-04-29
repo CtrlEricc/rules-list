@@ -27,6 +27,19 @@ class ListController extends GetxController {
 
   String _prevLink = '';
 
+  // PARSE RESPONSE
+  void parseJsonResponse(jsonResponse) {
+    List<Rule> list = jsonResponse['data']['entities']
+        .map<Rule>((item) => Rule.fromMap(item))
+        .toList();
+    _listRules.clear();
+    _listRules.assignAll(list);
+    _currentPage.value = jsonResponse['data']['pagination']['current_page'];
+    _totalPages.value = jsonResponse['data']['pagination']['total_pages'];
+    _nextLink = jsonResponse['data']['pagination']['links']['next'] ?? '';
+    _prevLink = jsonResponse['data']['pagination']['links']['prev'] ?? '';
+  }
+
   // SHOW RULES LIST
   void getRules({String? nextLink, String? prevLink}) async {
     _loading.value = true;
@@ -37,22 +50,12 @@ class ListController extends GetxController {
       } else if (prevLink != null) {
         url = prevLink;
       }
-
       final headers = {HttpHeaders.authorizationHeader: 'Bearer $token'};
       final response = await http.get(Uri.parse(url), headers: headers);
 
       var jsonResponse = jsonDecode(response.body);
-      List<Rule> list = jsonResponse['data']['entities']
-          .map<Rule>((item) => Rule.fromMap(item))
-          .toList();
-
-      _listRules.clear();
-      _listRules.assignAll(list);
-      _currentPage.value = jsonResponse['data']['pagination']['current_page'];
-      _totalPages.value = jsonResponse['data']['pagination']['total_pages'];
-      _nextLink = jsonResponse['data']['pagination']['links']['next'] ?? '';
-      _prevLink = jsonResponse['data']['pagination']['links']['prev'] ?? '';
-
+      parseJsonResponse(jsonResponse);
+      
       _loading.value = false;
     } catch (error) {
       _loading.value = false;
